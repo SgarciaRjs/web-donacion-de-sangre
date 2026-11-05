@@ -108,3 +108,28 @@ footer h5 {
         padding-bottom: 40px;
     }
 }
+
+/* TARJETAS DE PUNTOS DE DONACION */
+
+.tarjeta-punto {
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+.tarjeta-punto .card-title {
+    color: #b71c1c;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.tarjeta-punto p {
+    font-size: 15px;
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.tarjeta-punto .badge {
+    padding: 8px 12px;
+    font-weight: normal;
+}
