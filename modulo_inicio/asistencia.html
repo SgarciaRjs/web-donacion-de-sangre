@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Registro de asistencia | Donar Vida</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="panel">
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+    <div class="shell">
+        <aside class="side">
+            <div class="side-top">
+                <a class="side-brand" href="index.html" aria-label="Donar Vida, sitio público"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3.5C12.5 9 6.5 15 6.5 20.2a9.5 9.5 0 0 0 19 0C25.5 15 19.5 9 16 3.5Z"/></svg><span>donar<span>vida</span></span></a>
+                <button class="side-toggle d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#menuPanel"
+                    aria-controls="menuPanel" aria-expanded="false" aria-label="Abrir menú del panel"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+            </div>
+
+            <div class="collapse d-lg-flex side-body" id="menuPanel">
+                <p class="side-rol">Panel del organizador</p>
+                <nav class="side-nav" aria-label="Panel del organizador">
+<a class="side-link" href="organizador.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1"/><rect x="13.5" y="3.5" width="7" height="7" rx="1"/><rect x="3.5" y="13.5" width="7" height="7" rx="1"/><rect x="13.5" y="13.5" width="7" height="7" rx="1"/></svg><span>Resumen y campañas</span></a>
+<a class="side-link" href="campana-form.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span>Nueva campaña</span></a>
+<a class="side-link" href="asistencia.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7l2 2 3-4M4 17l2 2 3-4M13 7h7M13 17h7"/></svg><span>Registro de asistencia</span></a>
+                </nav>
+                <div class="side-pie">
+                    <a class="side-link" href="admin.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h13l-3-3M19 16H6l3 3"/></svg><span>Ir al panel del administrador</span></a>
+                    <a class="side-link" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 11L12 4l8.5 7M6 9.5V20h12V9.5"/></svg><span>Volver al sitio</span></a>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main" id="contenido">
+            <header class="cabecera">
+                <div>
+                    <h1>Registro de asistencia</h1>
+                    <p>Marca quién llegó a la jornada. Puedes cambiar la marca las veces que necesites antes de guardar.</p>
+                </div>
+                <div>
+                    <label class="form-label" for="selCampana">Campaña</label>
+                    <select class="form-select" id="selCampana">
+                        <option>Jornada Heredia Centro</option>
+                        <option>Campaña Universitaria de Otoño</option>
+                        <option>Jornada Escolar Solidaria</option>
+                    </select>
+                </div>
+            </header>
+            <p class="demo">Datos de ejemplo del avance de interfaz. Todavía no hay conexión con base de datos.</p>
+
+            <ul class="cifras" aria-label="Resumen de asistencia">
+                <li><strong id="cAsistio">0</strong><span>Asistieron</span></li>
+                <li><strong id="cNo">0</strong><span>No asistieron</span></li>
+                <li><strong id="cPend">0</strong><span>Pendientes</span></li>
+                <li><strong>12</strong><span>Donantes inscritos</span></li>
+            </ul>
+            <div class="progreso">
+                <div class="pista ok" role="presentation"><i id="barraProgreso" style="width:0%"></i></div>
+                <p id="textoProgreso">0 de 12 donantes con asistencia registrada</p>
+            </div>
+
+            <section class="bloque" aria-labelledby="hLista">
+                <h2 id="hLista">Donantes de <span id="nombreCampana">Jornada Heredia Centro</span></h2>
+                <p class="bloque-desc">Lista de ejemplo ordenada por hora de cita.</p>
+
+                <div class="filtros">
+                    <input class="form-control" type="search" placeholder="Buscar donante" aria-label="Buscar donante" data-filtra="#tablaAsistencia">
+                </div>
+                <div class="herramientas no-print">
+                    <button class="btn-secundario" type="button" id="marcarTodos">Marcar todos como asistió</button>
+                    <button class="btn-secundario" type="button" id="limpiarTodos">Limpiar marcas</button>
+                </div>
+
+                <div class="tabla-wrap">
+                    <table class="tabla" id="tablaAsistencia" data-tabla>
+                        <thead>
+                            <tr><th scope="col">Donante</th><th scope="col">Hora de cita</th><th scope="col">Asistencia</th></tr>
+                        </thead>
+                        <tbody>
+                        <tr data-fila data-buscar="Ana Rodríguez M.">
+                            <td><span class="nombre">Ana Rodríguez M.</span></td>
+                            <td>08:00</td>
+                            <td>
+                                <div class="seg" role="radiogroup" aria-label="Asistencia de Ana Rodríguez M.">
+                                    <input type="radio" name="as0" id="as0-a" value="asistio"><label class="op-asistio" for="as0-a">Asistió</label>
+                                    <input type="radio" name="as0" id="as0-n" value="no"><label class="op-no" for="as0-n">No asistió</label>
+                                    <input type="radio" name="as0" id="as0-p" value="pend" checked><label class="op-pend" for="as0-p">Pendiente</label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data-fila data-buscar="Luis Fernández S.">
+                            <td><span class="nombre">Luis Fernández S.</span></td>
+                            <td>08:20</td>
+                            <td>
+                                <div class="seg" role="radiogroup" aria-label="Asistencia de Luis Fernández S.">
+                                    <input type="radio" name="as1" id="as1-a" value="asistio"><label class="op-asistio" for="as1-a">Asistió</label>
+                                    <input type="radio" name="as1" id="as1-n" value="no"><label class="op-no" for="as1-n">No asistió</label>
+                                    <input type="radio" name="as1" id="as1-p" value="pend" checked><label class="op-pend" for="as1-p">Pendiente</label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data-fila data-buscar="María Jiménez C.">
+                            <td><span class="nombre">María Jiménez C.</span></td>
+                            <td>08:40</td>
+                            <td>
+                                <div class="seg" role="radiogroup" aria-label="Asistencia de María Jiménez C.">
+                                    <input type="radio" name="as2" id="as2-a" value="asistio"><label class="op-asistio" for="as2-a">Asistió</label>
+                                    <input type="radio" name="as2" id="as2-n" value="no"><label class="op-no" for="as2-n">No asistió</label>
+                                    <input type="radio" name="as2" id="as2-p" value="pend" checked><label class="op-pend" for="as2-p">Pendiente</label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data-fila data-buscar="Carlos Vargas P.">
+                            <td><span class="nombre">Carlos Vargas P.</span></td>
+                            <td>09:00</td>
+                            <td>
+                                <div class="seg" role="radiogroup" aria-label="Asistencia de Carlos Vargas P.">
+                                    <input type="radio" name="as3" id="as3-a" value="asistio"><label class="op-asistio" for="as3-a">Asistió</label>
+                                    <input type="radio" name="as3" id="as3-n" value="no"><label class="op-no" for="as3-n">No asistió</label>
+                                    <input type="radio" name="as3" id="as3-p" value="pend" checked><label class="op-pend" for="as3-p">Pendiente</label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data-fila data-buscar="Sofía Araya Q.">
+                            <td><span class="nombre">Sofía Araya Q.</span></td>
+                            <td>09:20</td>
+                            <td>
+                                <div class="seg" role="radiogroup" aria-label="Asistencia de Sofía Araya Q.">
+                                    <input type="radio" name="as4" id="as4-a" value="asistio"><label class="op-asistio" for="as4-a">Asistió</label>
+                                    <input type="radio" name="as4" id="as4-n" value="no"><label class="op-no" for="as4-n">No asistió</label>
+                                    <input type="radio" name="as4" id="as4-p" value="pend" checked><label class="op-pend" for="as4-p">Pendiente</label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data-fila data-buscar="Diego Chaves N.">
+                            <td><span class="nombre">Diego Chaves N.</span></td>
+                            <td>09:40</td>
+                            <td>
+                                <div class="seg" role="radiogroup" aria-label="Asistencia de Diego Chaves N.">
+                                    <input type="radio" name="as5" id="as5-a" value="asistio"><label class="op-asistio" for="as5-a">Asistió</label>
+                                    <input type="radio" name="as5" id="as5-n" value="no"><label class="op-no" for="as5-n">No asistió</label>
+                                    <input type="radio" name="as5" id="as5-p" value="pend" checked><label class="op-pend" for="as5-p">Pendiente</label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data-fila data-buscar="Valeria Campos R.">
+                            <td><span class="nombre">Valeria Campos R.</span></td>
+                            <td>10:00</td>
+                            <td>
+                                <div class="seg" role="radiogroup" aria-label="Asistencia de Valeria Campos R.">
+                                    <input type="radio" name="as6" id="as6-a" value="asistio"><label class="op-asistio" for="as6-a">Asistió</label>
+                                    <input type="radio" name="as6" id="as6-n" value="no"><label class="op-no" for="as6-n">No asistió</label>
+                                    <input type="radio" name="as6" id="as6-p" value="pend" checked><label class="op-pend" for="as6-p">Pendiente</label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data-fila data-buscar="Andrés Mora S.">
+                            <td><span class="nombre">Andrés Mora S.</span></td>
+                            <td>10:20</td>
+                            <td>
+                                <div class="seg" role="radiogroup" aria-label="Asistencia de Andrés Mora S.">
+                                    <input type="radio" name="as7" id="as7-a" value="asistio"><label class="op-asistio" for="as7-a">Asistió</label>
+                                    <input type="radio" name="as7" id="as7-n" value="no"><label class="op-no" for="as7-n">No asistió</label>
+                                    <input type="radio" name="as7" id="as7-p" value="pend" checked><label class="op-pend" for="as7-p">Pendiente</label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data-fila data-buscar="Camila Solano V.">
+                            <td><span class="nombre">Camila Solano V.</span></td>
+                            <td>10:40</td>
+                            <td>
+                                <div class="seg" role="radiogroup" aria-label="Asistencia de Camila Solano V.">
+                                    <input type="radio" name="as8" id="as8-a" value="asistio"><label class="op-asistio" for="as8-a">Asistió</label>
+                                    <input type="radio" name="as8" id="as8-n" value="no"><label class="op-no" for="as8-n">No asistió</label>
+                                    <input type="radio" name="as8" id="as8-p" value="pend" checked><label class="op-pend" for="as8-p">Pendiente</label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data-fila data-buscar="Mateo Ugalde B.">
+                            <td><span class="nombre">Mateo Ugalde B.</span></td>
+                            <td>11:00</td>
+                            <td>
+                                <div class="seg" role="radiogroup" aria-label="Asistencia de Mateo Ugalde B.">
+                                    <input type="radio" name="as9" id="as9-a" value="asistio"><label class="op-asistio" for="as9-a">Asistió</label>
+                                    <input type="radio" name="as9" id="as9-n" value="no"><label class="op-no" for="as9-n">No asistió</label>
+                                    <input type="radio" name="as9" id="as9-p" value="pend" checked><label class="op-pend" for="as9-p">Pendiente</label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data-fila data-buscar="Daniela Brenes H.">
+                            <td><span class="nombre">Daniela Brenes H.</span></td>
+                            <td>11:20</td>
+                            <td>
+                                <div class="seg" role="radiogroup" aria-label="Asistencia de Daniela Brenes H.">
+                                    <input type="radio" name="as10" id="as10-a" value="asistio"><label class="op-asistio" for="as10-a">Asistió</label>
+                                    <input type="radio" name="as10" id="as10-n" value="no"><label class="op-no" for="as10-n">No asistió</label>
+                                    <input type="radio" name="as10" id="as10-p" value="pend" checked><label class="op-pend" for="as10-p">Pendiente</label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data-fila data-buscar="Jorge Salas L.">
+                            <td><span class="nombre">Jorge Salas L.</span></td>
+                            <td>11:40</td>
+                            <td>
+                                <div class="seg" role="radiogroup" aria-label="Asistencia de Jorge Salas L.">
+                                    <input type="radio" name="as11" id="as11-a" value="asistio"><label class="op-asistio" for="as11-a">Asistió</label>
+                                    <input type="radio" name="as11" id="as11-n" value="no"><label class="op-no" for="as11-n">No asistió</label>
+                                    <input type="radio" name="as11" id="as11-p" value="pend" checked><label class="op-pend" for="as11-p">Pendiente</label>
+                                </div>
+                            </td>
+                        </tr>
+                            <tr class="fila-vacia" hidden><td colspan="3">Ningún donante coincide con la búsqueda.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="form-acciones">
+                    <button class="btn btn-primary-custom" type="button" id="guardarAsistencia">Guardar asistencia <span aria-hidden="true">↗</span></button>
+                    <a class="text-link" href="organizador.html">Volver a mis campañas</a>
+                </div>
+            </section>
+        </main>
+    </div>
+
+
+    <div class="avisos" id="avisos" aria-live="polite"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="admin.js"></script>
+</body>
+
+</html>

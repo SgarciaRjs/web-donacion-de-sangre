@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Reportes | Donar Vida</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="panel">
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+    <div class="shell">
+        <aside class="side">
+            <div class="side-top">
+                <a class="side-brand" href="index.html" aria-label="Donar Vida, sitio público"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3.5C12.5 9 6.5 15 6.5 20.2a9.5 9.5 0 0 0 19 0C25.5 15 19.5 9 16 3.5Z"/></svg><span>donar<span>vida</span></span></a>
+                <button class="side-toggle d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#menuPanel"
+                    aria-controls="menuPanel" aria-expanded="false" aria-label="Abrir menú del panel"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+            </div>
+
+            <div class="collapse d-lg-flex side-body" id="menuPanel">
+                <p class="side-rol">Panel del administrador</p>
+                <nav class="side-nav" aria-label="Panel del administrador">
+<a class="side-link" href="admin.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1"/><rect x="13.5" y="3.5" width="7" height="7" rx="1"/><rect x="3.5" y="13.5" width="7" height="7" rx="1"/><rect x="13.5" y="13.5" width="7" height="7" rx="1"/></svg><span>Resumen</span></a>
+<a class="side-link" href="usuarios.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.6 3.2-5.5 6.5-5.5s5.9 1.9 6.5 5.5M16 4.8a3.5 3.5 0 0 1 0 6.4M18 14.8c1.8.7 3 2.3 3.5 5.2"/></svg><span>Usuarios y roles</span></a>
+<a class="side-link" href="reportes.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V4M4 20h16M8 16v-5M12 16V7M16 16v-8"/></svg><span>Reportes</span></a>
+                </nav>
+                <div class="side-pie">
+                    <a class="side-link" href="organizador.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h13l-3-3M19 16H6l3 3"/></svg><span>Ir al panel del organizador</span></a>
+                    <a class="side-link" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 11L12 4l8.5 7M6 9.5V20h12V9.5"/></svg><span>Volver al sitio</span></a>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main" id="contenido">
+            <header class="cabecera">
+                <div>
+                    <h1>Reportes</h1>
+                    <p>Cómo van las inscripciones, la asistencia y la composición de usuarios.</p>
+                </div>
+                <div class="d-flex flex-wrap gap-2 no-print">
+                    <button class="btn-secundario" type="button" id="imprimir">Imprimir</button>
+                    <button class="btn btn-primary-custom" type="button" id="exportarCsv">Exportar CSV <span aria-hidden="true">↓</span></button>
+                </div>
+            </header>
+            <p class="demo">Datos de ejemplo del avance de interfaz. Todavía no hay conexión con base de datos.</p>
+
+            <ul class="cifras" aria-label="Resumen de reportes">
+                <li><strong>287</strong><span>Inscripciones totales</span></li>
+                <li><strong>110</strong><span>Asistentes en campañas finalizadas</span></li>
+                <li><strong>82 %</strong><span>Asistencia en campañas finalizadas</span></li>
+                <li><strong>6</strong><span>Campañas</span></li>
+            </ul>
+
+            <section class="bloque" aria-labelledby="hRepC">
+                <h2 id="hRepC">Inscripción y asistencia por campaña</h2>
+                <p class="bloque-desc">La asistencia solo se calcula cuando la campaña ya finalizó.</p>
+
+                <div class="filtros">
+                    <select class="form-select" aria-label="Filtrar por estado" data-filtra="#tablaReporte" data-attr="estado">
+                        <option value="">Todas las campañas</option>
+                        <option value="activa">Activas</option>
+                        <option value="finalizada">Finalizadas</option>
+                        <option value="borrador">Borradores</option>
+                        <option value="cancelada">Canceladas</option>
+                    </select>
+                </div>
+
+                <div class="tabla-wrap">
+                    <table class="tabla" id="tablaReporte" data-tabla>
+                        <thead>
+                            <tr><th scope="col">Campaña</th><th scope="col">Estado</th><th scope="col" class="num">Inscritos</th><th scope="col" class="num">Asistentes</th><th scope="col">Asistencia</th></tr>
+                        </thead>
+                        <tbody>
+                        <tr data-fila data-estado="activa">
+                            <td><span class="nombre">Jornada Heredia Centro</span></td>
+                            <td><span class="chip chip-activa">Activa</span></td>
+                            <td class="num">54</td>
+                            <td class="num">—</td>
+                            <td><span class="text-muted">—</span></td>
+                        </tr>
+                        <tr data-fila data-estado="activa">
+                            <td><span class="nombre">Campaña Universitaria de Otoño</span></td>
+                            <td><span class="chip chip-activa">Activa</span></td>
+                            <td class="num">87</td>
+                            <td class="num">—</td>
+                            <td><span class="text-muted">—</span></td>
+                        </tr>
+                        <tr data-fila data-estado="borrador">
+                            <td><span class="nombre">Donación en Parque Central</span></td>
+                            <td><span class="chip chip-borrador">Borrador</span></td>
+                            <td class="num">0</td>
+                            <td class="num">—</td>
+                            <td><span class="text-muted">—</span></td>
+                        </tr>
+                        <tr data-fila data-estado="finalizada">
+                            <td><span class="nombre">Jornada Escolar Solidaria</span></td>
+                            <td><span class="chip chip-finalizada">Finalizada</span></td>
+                            <td class="num">63</td>
+                            <td class="num">52</td>
+                            <td><div class="celda-barra"><div class="pista ok" role="presentation"><i style="width:83%"></i></div><b>83 %</b></div></td>
+                        </tr>
+                        <tr data-fila data-estado="finalizada">
+                            <td><span class="nombre">Campaña Aniversario</span></td>
+                            <td><span class="chip chip-finalizada">Finalizada</span></td>
+                            <td class="num">71</td>
+                            <td class="num">58</td>
+                            <td><div class="celda-barra"><div class="pista ok" role="presentation"><i style="width:82%"></i></div><b>82 %</b></div></td>
+                        </tr>
+                        <tr data-fila data-estado="cancelada">
+                            <td><span class="nombre">Jornada San Joaquín</span></td>
+                            <td><span class="chip chip-cancelada">Cancelada</span></td>
+                            <td class="num">12</td>
+                            <td class="num">—</td>
+                            <td><span class="text-muted">—</span></td>
+                        </tr>
+                            <tr class="fila-vacia" hidden><td colspan="5">Ninguna campaña coincide con el filtro.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="bloque" aria-labelledby="hRepU">
+                <h2 id="hRepU">Usuarios por rol</h2>
+                <p class="bloque-desc">Sobre 238 usuarios registrados.</p>
+                <ul class="barras">
+                    <li><span>Donantes</span><div class="pista" role="presentation"><i style="width:97%"></i></div><b>230</b></li>
+                    <li><span>Organizadores</span><div class="pista" role="presentation"><i style="width:3%"></i></div><b>6</b></li>
+                    <li><span>Administradores</span><div class="pista" role="presentation"><i style="width:2%"></i></div><b>2</b></li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+
+    <div class="avisos" id="avisos" aria-live="polite"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="admin.js"></script>
+</body>
+
+</html>
