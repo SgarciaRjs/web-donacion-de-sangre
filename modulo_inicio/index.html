@@ -1,1 +1,110 @@
 <!-- Modulo de inicio e informacion publica -->
+
+/* ESTILOS GENERALES */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333333;
+}
+
+/* PORTADA */
+
+.portada {
+    background-color: #f8e8e8;
+    padding: 100px 20px;
+}
+
+.portada h1 {
+    color: #b71c1c;
+    font-size: 42px;
+}
+
+.portada p {
+    margin-top: 20px;
+}
+
+/* SECCIONES */
+
+.seccion {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.seccion h2 {
+    color: #b71c1c;
+    font-weight: bold;
+}
+
+.fondo-claro {
+    background-color: #f8f8f8;
+}
+
+/* TARJETAS */
+
+.card {
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.card-title {
+    color: #b71c1c;
+    font-weight: bold;
+}
+
+/* TARJETA INFORMATIVA */
+
+.tarjeta-informativa {
+    background-color: #f8e8e8;
+    border-left: 5px solid #b71c1c;
+    border-radius: 8px;
+    padding: 30px;
+}
+
+.tarjeta-informativa h4 {
+    color: #b71c1c;
+}
+
+/* MENU */
+
+.navbar-brand {
+    font-size: 24px;
+}
+
+.nav-link {
+    margin-left: 8px;
+}
+
+/* PIE DE PAGINA */
+
+footer {
+    margin-top: 0;
+}
+
+footer h5 {
+    font-weight: bold;
+}
+
+/* RESPONSIVIDAD */
+
+@media (max-width: 768px) {
+    .portada {
+        padding: 65px 15px;
+    }
+
+    .portada h1 {
+        font-size: 30px;
+    }
+
+    .seccion {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+}
