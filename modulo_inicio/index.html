@@ -1,51 +1,49 @@
-<!-- Modulo de inicio e informacion publica -->
-
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donar Vida | Sistema de Donación de Sangre</title>
+    <meta name="theme-color" content="#f8f5f1">
+    <meta name="description"
+        content="Conoce la importancia de donar sangre, los requisitos generales y los puntos de donación.">
+    <title>Donar Vida | Información sobre donación de sangre</title>
 
-    <!-- Bootstrap 5.3.8 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Hoja de estilos propia -->
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
 
-    <!-- ENCABEZADO Y MENU -->
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+<body>
+    <header class="site-header">
+        <nav class="navbar navbar-expand-lg">
             <div class="container">
-                <a class="navbar-brand fw-bold" href="#inicio">
-                    Donar Vida
+                <a class="navbar-brand" href="#inicio" aria-label="Donar Vida, inicio">
+                    <span class="brand-mark" aria-hidden="true">
+                        <svg viewBox="0 0 32 32" role="img">
+                            <path d="M16 3.5C12.5 9 6.5 15 6.5 20.2a9.5 9.5 0 0 0 19 0C25.5 15 19.5 9 16 3.5Z" />
+                        </svg>
+                    </span>
+                    <span>donar<span class="brand-accent">vida</span></span>
                 </a>
 
-                <button class="navbar-toggler" type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#menuPrincipal">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+                    aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="menuPrincipal">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#inicio">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#informacion">Información</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#requisitos">Requisitos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#preguntas">Preguntas frecuentes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#puntos">Puntos de donación</a>
-                        </li>
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                        <li class="nav-item"><a class="nav-link active" href="#inicio">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#informacion">Información</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#requisitos">Requisitos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#preguntas">Preguntas frecuentes</a></li>
+                        <li class="nav-item"><a class="nav-link nav-link-cta" href="#puntos">Puntos de donación <span
+                                    aria-hidden="true">↗</span></a></li>
                     </ul>
                 </div>
             </div>
@@ -53,316 +51,264 @@
     </header>
 
     <main>
-
-        <!-- PRESENTACION PRINCIPAL -->
-        <section id="inicio" class="portada text-center">
+        <section id="inicio" class="hero-section">
             <div class="container">
-                <h1 class="fw-bold">Donar sangre es donar vida</h1>
-                <p class="lead">
-                    Tu donación puede marcar la diferencia en la vida de otra persona.
-                </p>
-                <a href="#informacion" class="btn btn-danger btn-lg mt-3">
-                    Conocer más
-                </a>
-            </div>
-        </section>
+                <div class="hero-grid">
+                    <div class="hero-copy">
+                        <p class="hero-overline"><span class="overline-dot"></span> Un acto que nos conecta</p>
+                        <h1>Tu sangre puede ser <em>la esperanza</em> de alguien.</h1>
+                        <p class="hero-lead">Donar sangre es un gesto solidario que ayuda a mantener las reservas
+                            disponibles para quienes necesitan una transfusión.</p>
+                        <div class="hero-actions">
+                            <a href="#informacion" class="btn btn-primary-custom">Conoce cómo ayudar <span
+                                    aria-hidden="true">↗</span></a>
+                            <a href="#requisitos" class="text-link">Conocer los requisitos</a>
+                        </div>
+                        <div class="hero-note">
+                            <span class="note-line"></span>
+                            <span>Infórmate. Participa. Comparte vida.</span>
+                        </div>
+                    </div>
 
-        <!-- INFORMACION SOBRE DONACION -->
-        <section id="informacion" class="container seccion">
-            <div class="text-center mb-4">
-                <h2>Información sobre la donación de sangre</h2>
-                <p class="text-muted">
-                    Conoce la importancia de este acto solidario.
-                </p>
-            </div>
-
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <h3>¿Por qué donar sangre?</h3>
-                    <p>
-                        La donación de sangre es un acto voluntario y solidario
-                        que permite ayudar a personas que necesitan transfusiones
-                        debido a diferentes situaciones médicas.
-                    </p>
-                    <p>
-                        Mantener disponibles las reservas de sangre es importante
-                        para apoyar la atención de pacientes y las necesidades
-                        de los centros de salud.
-                    </p>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="tarjeta-informativa">
-                        <h4>Un pequeño gesto puede ayudar mucho</h4>
-                        <p>
-                            Informarte, participar en campañas y donar sangre
-                            son formas de contribuir con tu comunidad.
-                        </p>
+                    <div class="hero-art" aria-label="Ilustración abstracta de una gota de sangre">
+                        <div class="art-orbit orbit-one"></div>
+                        <div class="art-orbit orbit-two"></div>
+                        <div class="art-label label-top"><span class="label-dot"></span> Donación voluntaria</div>
+                        <div class="drop-stage">
+                            <svg class="hero-drop" viewBox="0 0 300 360" aria-hidden="true">
+                                <defs>
+                                    <linearGradient id="dropGradient" x1="0" y1="0" x2="1" y2="1">
+                                        <stop offset="0%" stop-color="#f16b67" />
+                                        <stop offset="100%" stop-color="#a91f35" />
+                                    </linearGradient>
+                                </defs>
+                                <path d="M150 18C119 69 43 153 43 226a107 107 0 0 0 214 0C257 153 181 69 150 18Z"
+                                    fill="url(#dropGradient)" />
+                                <path d="M91 224c0-35 23-72 45-100" fill="none" stroke="#fff" stroke-linecap="round"
+                                    stroke-width="13" opacity=".28" />
+                                <path d="M88 260c8 28 30 45 59 48" fill="none" stroke="#fff" stroke-linecap="round"
+                                    stroke-width="8" opacity=".2" />
+                            </svg>
+                            <span class="drop-spark spark-one"></span>
+                            <span class="drop-spark spark-two"></span>
+                        </div>
+                        <div class="art-label label-bottom">Un pequeño gesto.<br><strong>Un gran impacto.</strong></div>
+                        <span class="art-cross cross-one">+</span>
+                        <span class="art-cross cross-two">+</span>
                     </div>
                 </div>
             </div>
+            <div class="hero-bottom-rule"></div>
         </section>
 
-        <!-- REQUISITOS GENERALES -->
-        <section id="requisitos" class="seccion fondo-claro">
+        <section id="informacion" class="section-intro section-pad">
             <div class="container">
-                <div class="text-center mb-4">
-                    <h2>Requisitos generales</h2>
-                    <p class="text-muted">
-                        Información general que debes conocer antes de donar.
-                    </p>
+                <div class="section-heading">
+                    <p class="section-index">01 / INFORMACIÓN</p>
+                    <h2>Una donación.<br><em>Muchas posibilidades.</em></h2>
                 </div>
-
-                <div class="row g-4">
-                    <div class="col-md-4">
-                        <div class="card h-100">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Identificación</h5>
-                                <p class="card-text">
-                                    Presentar un documento de identificación
-                                    válido.
-                                </p>
-                            </div>
-                        </div>
+                <div class="intro-grid">
+                    <div class="intro-main">
+                        <h3>¿Por qué donar sangre?</h3>
+                        <p>La donación de sangre es un acto voluntario y solidario que permite ayudar a personas que
+                            necesitan transfusiones debido a diferentes situaciones médicas.</p>
+                        <p>Mantener disponibles las reservas de sangre es importante para apoyar la atención de
+                            pacientes y las necesidades de los centros de salud.</p>
                     </div>
-
-                    <div class="col-md-4">
-                        <div class="card h-100">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Estado de salud</h5>
-                                <p class="card-text">
-                                    Encontrarse en condiciones de salud
-                                    adecuadas para la valoración.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="card h-100">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Valoración médica</h5>
-                                <p class="card-text">
-                                    Cumplir con la evaluación realizada por
-                                    el personal de salud.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="alert alert-warning mt-4">
-                    <strong>Importante:</strong> Estos son datos informativos.
-                    La elegibilidad para donar debe ser determinada por el
-                    personal de salud correspondiente.
+                    <aside class="quote-panel">
+                        <span class="quote-mark" aria-hidden="true">“</span>
+                        <p>Un pequeño gesto puede ayudar mucho.</p>
+                        <span class="quote-rule"></span>
+                        <small>Informarte, participar en campañas y donar sangre son formas de contribuir con tu
+                            comunidad.</small>
+                    </aside>
                 </div>
             </div>
         </section>
 
-        <!-- PREGUNTAS FRECUENTES -->
-        <section id="preguntas" class="container seccion">
-            <div class="text-center mb-4">
-                <h2>Preguntas frecuentes</h2>
-                <p class="text-muted">
-                    Resolvemos algunas dudas sobre la donación.
-                </p>
-            </div>
-
-            <div class="accordion" id="preguntasFrecuentes">
-
-                <div class="accordion-item">
-                    <h3 class="accordion-header">
-                        <button class="accordion-button" type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#preguntaUno">
-                            ¿Por qué es importante donar sangre?
-                        </button>
-                    </h3>
-                    <div id="preguntaUno"
-                        class="accordion-collapse collapse show"
-                        data-bs-parent="#preguntasFrecuentes">
-                        <div class="accordion-body">
-                            Porque permite contar con sangre disponible para
-                            pacientes que necesitan transfusiones.
-                        </div>
-                    </div>
+        <section id="requisitos" class="requirements-section section-pad">
+            <div class="container">
+                <div class="section-heading section-heading-light">
+                    <p class="section-index">02 / ANTES DE DONAR</p>
+                    <h2>Lo que debes<br><em>tener presente.</em></h2>
+                    <p class="section-description">Información general que debes conocer antes de donar.</p>
                 </div>
 
-                <div class="accordion-item">
-                    <h3 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#preguntaDos">
-                            ¿Dónde puedo consultar los requisitos?
-                        </button>
-                    </h3>
-                    <div id="preguntaDos"
-                        class="accordion-collapse collapse"
-                        data-bs-parent="#preguntasFrecuentes">
-                        <div class="accordion-body">
-                            Puedes consultar la sección de requisitos de este
-                            sitio y confirmar la información con el centro
-                            de donación correspondiente.
+                <div class="requirements-list">
+                    <article class="requirement-row">
+                        <span class="requirement-number">01</span>
+                        <div>
+                            <h3>Identificación</h3>
+                            <p>Presentar un documento de identificación válido.</p>
                         </div>
-                    </div>
+                        <span class="requirement-symbol" aria-hidden="true">↗</span>
+                    </article>
+                    <article class="requirement-row">
+                        <span class="requirement-number">02</span>
+                        <div>
+                            <h3>Estado de salud</h3>
+                            <p>Encontrarse en condiciones de salud adecuadas para la valoración.</p>
+                        </div>
+                        <span class="requirement-symbol" aria-hidden="true">↗</span>
+                    </article>
+                    <article class="requirement-row">
+                        <span class="requirement-number">03</span>
+                        <div>
+                            <h3>Valoración médica</h3>
+                            <p>Cumplir con la evaluación realizada por el personal de salud.</p>
+                        </div>
+                        <span class="requirement-symbol" aria-hidden="true">↗</span>
+                    </article>
                 </div>
 
-                <div class="accordion-item">
-                    <h3 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#preguntaTres">
-                            ¿Cómo encuentro un punto de donación?
-                        </button>
-                    </h3>
-                    <div id="preguntaTres"
-                        class="accordion-collapse collapse"
-                        data-bs-parent="#preguntasFrecuentes">
-                        <div class="accordion-body">
-                            Consulta el listado de puntos de donación disponible
-                            en la sección correspondiente.
-                        </div>
-                    </div>
+                <div class="notice-box">
+                    <span class="notice-icon" aria-hidden="true">i</span>
+                    <p><strong>Importante:</strong> Estos son datos informativos. La elegibilidad para donar debe ser
+                        determinada por el personal de salud correspondiente.</p>
                 </div>
-
             </div>
         </section>
 
-        
-<!-- PUNTOS DE DONACION -->
-<section id="puntos" class="seccion fondo-claro">
-    <div class="container">
-
-        <div class="text-center mb-4">
-            <h2>Puntos de donación</h2>
-            <p class="text-muted">
-                Encuentra información sobre los lugares disponibles
-                para realizar donaciones de sangre.
-            </p>
-        </div>
-
-        <div class="row g-4">
-
-                    <!-- PUNTO DE DONACION 1 -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="card tarjeta-punto h-100">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    Banco Nacional de Sangre
-                                </h5>
-
-                                <p>
-                                    <strong>Ubicación:</strong>
-                                    Información pendiente de confirmar.
-                                </p>
-
-                                <p>
-                                    <strong>Horario:</strong>
-                                    Consultar con el centro.
-                                </p>
-
-                                <p>
-                                    <strong>Contacto:</strong>
-                                    Información pendiente.
-                                </p>
-
-                                <span class="badge bg-danger">
-                                    Centro de donación
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- PUNTO DE DONACION 2 -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="card tarjeta-punto h-100">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    Centro de donación 2
-                                </h5>
-
-                                <p>
-                                    <strong>Ubicación:</strong>
-                                    Pendiente de confirmar.
-                                </p>
-
-                                <p>
-                                    <strong>Horario:</strong>
-                                    Pendiente de confirmar.
-                                </p>
-
-                                <p>
-                                    <strong>Contacto:</strong>
-                                    Pendiente de confirmar.
-                                </p>
-
-                                <span class="badge bg-secondary">
-                                    Centro de donación
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- PUNTO DE DONACION 3 -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="card tarjeta-punto h-100">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    Centro de donación 3
-                                </h5>
-
-                                <p>
-                                    <strong>Ubicación:</strong>
-                                    Pendiente de confirmar.
-                                </p>
-
-                                <p>
-                                    <strong>Horario:</strong>
-                                    Pendiente de confirmar.
-                                </p>
-
-                                <p>
-                                    <strong>Contacto:</strong>
-                                    Pendiente de confirmar.
-                                </p>
-
-                                <span class="badge bg-secondary">
-                                    Centro de donación
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-
+        <section id="preguntas" class="faq-section section-pad">
+            <div class="container faq-grid">
+                <div class="section-heading">
+                    <p class="section-index">03 / ACLAREMOS DUDAS</p>
+                    <h2>Preguntas<br><em>frecuentes.</em></h2>
+                    <p class="section-description">Resolvemos algunas dudas sobre la donación.</p>
                 </div>
 
-                <div class="alert alert-info mt-4">
-                    <strong>Nota:</strong>
-                    Los horarios, ubicaciones y datos de contacto deben
-                    confirmarse directamente con cada centro de donación.
+                <div class="accordion faq-accordion" id="preguntasFrecuentes">
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#preguntaUno" aria-expanded="true" aria-controls="preguntaUno">¿Por qué
+                                es importante donar sangre?</button>
+                        </h3>
+                        <div id="preguntaUno" class="accordion-collapse collapse show"
+                            data-bs-parent="#preguntasFrecuentes">
+                            <div class="accordion-body">Porque permite contar con sangre disponible para pacientes que
+                                necesitan transfusiones.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#preguntaDos" aria-expanded="false" aria-controls="preguntaDos">¿Dónde
+                                puedo consultar los requisitos?</button>
+                        </h3>
+                        <div id="preguntaDos" class="accordion-collapse collapse" data-bs-parent="#preguntasFrecuentes">
+                            <div class="accordion-body">Puedes consultar la sección de requisitos de este sitio y
+                                confirmar la información con el centro de donación correspondiente.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#preguntaTres" aria-expanded="false" aria-controls="preguntaTres">¿Cómo
+                                encuentro un punto de donación?</button>
+                        </h3>
+                        <div id="preguntaTres" class="accordion-collapse collapse"
+                            data-bs-parent="#preguntasFrecuentes">
+                            <div class="accordion-body">Consulta el listado de puntos de donación disponible en la
+                                sección correspondiente.</div>
+                        </div>
+                    </div>
                 </div>
-
             </div>
         </section>
 
+        <section id="puntos" class="locations-section section-pad">
+            <div class="container">
+                <div class="locations-heading">
+                    <div class="section-heading">
+                        <p class="section-index">04 / ENCUENTRA TU CENTRO</p>
+                        <h2>Puntos de<br><em>donación.</em></h2>
+                    </div>
+                    <p class="section-description">Encuentra información sobre los lugares disponibles para realizar
+                        donaciones de sangre.</p>
+                </div>
 
+                <div class="row g-3">
+                    <div class="col-md-6 col-lg-4">
+                        <article class="location-card">
+                            <span class="location-count">CENTRO 01</span>
+                            <h3>Banco Nacional<br>de Sangre</h3>
+                            <dl>
+                                <div>
+                                    <dt>Ubicación</dt>
+                                    <dd>Información pendiente de confirmar.</dd>
+                                </div>
+                                <div>
+                                    <dt>Horario</dt>
+                                    <dd>Consultar con el centro.</dd>
+                                </div>
+                                <div>
+                                    <dt>Contacto</dt>
+                                    <dd>Información pendiente.</dd>
+                                </div>
+                            </dl>
+                            <span class="location-tag">Centro de donación</span>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <article class="location-card">
+                            <span class="location-count">CENTRO 02</span>
+                            <h3>Centro de<br>donación 2</h3>
+                            <dl>
+                                <div>
+                                    <dt>Ubicación</dt>
+                                    <dd>Pendiente de confirmar.</dd>
+                                </div>
+                                <div>
+                                    <dt>Horario</dt>
+                                    <dd>Pendiente de confirmar.</dd>
+                                </div>
+                                <div>
+                                    <dt>Contacto</dt>
+                                    <dd>Pendiente de confirmar.</dd>
+                                </div>
+                            </dl>
+                            <span class="location-tag">Centro de donación</span>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <article class="location-card">
+                            <span class="location-count">CENTRO 03</span>
+                            <h3>Centro de<br>donación 3</h3>
+                            <dl>
+                                <div>
+                                    <dt>Ubicación</dt>
+                                    <dd>Pendiente de confirmar.</dd>
+                                </div>
+                                <div>
+                                    <dt>Horario</dt>
+                                    <dd>Pendiente de confirmar.</dd>
+                                </div>
+                                <div>
+                                    <dt>Contacto</dt>
+                                    <dd>Pendiente de confirmar.</dd>
+                                </div>
+                            </dl>
+                            <span class="location-tag">Centro de donación</span>
+                        </article>
+                    </div>
+                </div>
+
+                <p class="locations-note"><strong>Nota:</strong> Los horarios, ubicaciones y datos de contacto deben
+                    confirmarse directamente con cada centro de donación.</p>
+            </div>
+        </section>
     </main>
 
-    <!-- PIE DE PAGINA -->
-    <footer class="bg-dark text-white text-center py-4">
-        <div class="container">
-            <h5>Donar Vida</h5>
-            <p class="mb-1">
-                Sistema web para la gestión de donación de sangre.
-            </p>
-            <p class="mb-0">
-                Proyecto universitario - SC502
-            </p>
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <a class="footer-brand" href="#inicio">donar<span>vida</span></a>
+            <p>Sistema web para la gestión de donación de sangre.<br>Proyecto universitario · SC502</p>
+            <a class="back-top" href="#inicio">Volver arriba ↑</a>
         </div>
     </footer>
 
-    <!-- Bootstrap JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
-</html>
 
+</html>
