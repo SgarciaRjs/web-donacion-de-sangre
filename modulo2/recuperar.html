@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recuperar contraseña</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar navbar-dark" style="background-color: #0a1db3;">
+    <div class="container">
+      <a class="navbar-brand" href="listado.html">Donación de sangre</a>
+    </div>
+  </nav>
+
+  <main class="form-registro">
+    <h1 class="h2">Recuperar contraseña</h1>
+    <p>Ingresá tu correo para solicitar un enlace de recuperación.</p>
+
+    <form id="formRecuperar">
+      <label for="correoRecuperacion">Correo electrónico</label>
+      <input type="email" id="correoRecuperacion" class="form-control mb-3"
+             autocomplete="email" required>
+
+      <button type="submit">Solicitar enlace</button>
+      <p id="mensajeRecuperacion" class="mt-3" role="status"></p>
+    </form>
+
+    <p><a href="login.html">Volver a iniciar sesión</a></p>
+  </main>
+
+  <script>
+    const formulario = document.getElementById("formRecuperar");
+    const mensaje = document.getElementById("mensajeRecuperacion");
+
+    formulario.addEventListener("submit", function (evento) {
+      evento.preventDefault();
+      mensaje.textContent = "Solicitud simulada. En esta demo no se envía un correo.";
+    });
+  </script>
+</body>
+</html>
