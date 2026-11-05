@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #85858d, #14436b);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Formulario de Registro */
+.form-registro {
+  max-width: 450px;
+  margin: 40px auto;
+  padding: 30px;
+  background:linear-gradient(to bottom, #b3beb9, #396894);
+  color: #000000;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.form-registro h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-registro input,
+.contenedor-registro select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #0e38ad;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.form-registro button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: #052047;
+  color: #fff;
+  cursor: pointer;
+}
+
+.form-registro #mensaje {
+  text-align: center;
+  margin-top: 15px;
+}
